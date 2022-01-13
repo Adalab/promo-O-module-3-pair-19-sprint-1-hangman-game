@@ -1,10 +1,8 @@
-// import '../styles/App.scss';
-import blackboardImage from '../images/blackboard.jpg';
+import '../styles/App.scss';
 
 function App() {
   return (
     <body>
-      <img src={blackboardImage} />
       <div class="page">
         <header>
           <h1 class="header__title">Juego del ahorcado</h1>
