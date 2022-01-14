@@ -8,11 +8,19 @@ function App() {
   const handleClickBtn = () => {
     setNumberOfErrors(numberOfErrors + 1);
   };
-  console.log(numberOfErrors);
 
   const handleInput = (ev) => {
     const inputValue = ev.currentTarget.value;
     setLastLetter(inputValue.match(/[a-z]/gi));
+  };
+
+  const renderSolutionLetters = () => {
+    const keyWord = "katakroker";
+    const wordLetters = keyWord.split("");
+    console.log(wordLetters);
+    return wordLetters.map((eachLetter) => {
+      return <li class="letter">{eachLetter}</li>;
+    });
   };
   return (
     <div className="page">
@@ -24,7 +32,8 @@ function App() {
           <div className="solution">
             <h2 className="title">Solución:</h2>
             <ul className="letters">
-              <li className="letter">k</li>
+              {renderSolutionLetters()}
+              {/* <li className="letter">k</li>
               <li className="letter">a</li>
               <li className="letter"></li>
               <li className="letter">a</li>
@@ -33,7 +42,7 @@ function App() {
               <li className="letter"></li>
               <li className="letter">k</li>
               <li className="letter">e</li>
-              <li className="letter">r</li>
+              <li className="letter">r</li> */}
             </ul>
           </div>
           <div className="error">
