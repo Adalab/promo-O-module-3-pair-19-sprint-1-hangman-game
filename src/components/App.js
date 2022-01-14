@@ -15,11 +15,11 @@ function App() {
   };
 
   const renderSolutionLetters = () => {
-    const keyWord = "katakroker";
-    const wordLetters = keyWord.split("");
-    console.log(wordLetters);
-    return wordLetters.map((eachLetter) => {
-      return <li class="letter">{eachLetter}</li>;
+    const keyWord = "HOLA";
+    const keyWordArray = keyWord.split("");
+    console.log(keyWordArray);
+    return keyWordArray.map((eachLetter) => {
+      return <li class="letter"></li>;
     });
   };
   return (
