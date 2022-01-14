@@ -3,11 +3,17 @@ import { useState } from "react";
 
 function App() {
   const [numberOfErrors, setNumberOfErrors] = useState(0);
+  const [lastLetter, setLastLetter] = useState("");
 
   const handleClickBtn = () => {
     setNumberOfErrors(numberOfErrors + 1);
   };
   console.log(numberOfErrors);
+
+  const handleInput = (ev) => {
+    const inputValue = ev.currentTarget.value;
+    setLastLetter(inputValue.match(/[a-z]/gi));
+  };
   return (
     <div className="page">
       <header>
@@ -51,6 +57,8 @@ function App() {
               type="text"
               name="last-letter"
               id="last-letter"
+              value={lastLetter ? lastLetter : ""}
+              onChange={handleInput}
             />
           </form>
         </section>
