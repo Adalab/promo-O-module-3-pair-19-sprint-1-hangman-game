@@ -4,6 +4,7 @@ import { useState } from "react";
 function App() {
   const [numberOfErrors, setNumberOfErrors] = useState(0);
   const [lastLetter, setLastLetter] = useState("");
+  const [userLetter, setUserLetter] = useState("");
 
   const handleClickBtn = () => {
     setNumberOfErrors(numberOfErrors + 1);
@@ -12,14 +13,19 @@ function App() {
   const handleInput = (ev) => {
     const inputValue = ev.currentTarget.value;
     setLastLetter(inputValue.match(/[a-z]/gi));
+    if (lastLetter !== null) {
+      setUserLetter([...userLetter, lastLetter]);
+    }
+    console.log(lastLetter);
+    console.log(userLetter);
   };
 
   const renderSolutionLetters = () => {
-    const keyWord = "HOLA";
+    const keyWord = "katakroker";
     const keyWordArray = keyWord.split("");
-    console.log(keyWordArray);
-    return keyWordArray.map((eachLetter) => {
-      return <li class="letter"></li>;
+
+    return keyWordArray.map((eachLetter, index) => {
+      return <li key={index} className="letter"></li>;
     });
   };
   return (
